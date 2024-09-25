@@ -1,0 +1,85 @@
+.home-focus {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 2vw;
+}
+
+.focus-item {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.focus-item:hover {
+  cursor: pointer;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  height: 121.739vh;
+  width: 100%;
+  transition: transform 3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.focus-item:hover .image {
+  transform: scale(1.2);
+}
+
+.content {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.5vw;
+  transform: translateY(15px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.content.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.title {
+  font-family: "Saol";
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: min(4.5vw, 5rem);
+  transform: translate3d(0px, 0.3041px, 0px);
+}
+
+.content span {
+  font-size: min(2.5vw, 1rem);
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #fff;
+  font-weight: 200;
+}
+
+@media (max-width: 768px) {
+  .focus-item {
+    width: 100%;
+  }
+
+  .image {
+    height: 35vh;
+  }
+
+  .title {
+    font-size: min(6vw, 3rem);
+  }
+
+  .content span {
+    font-size: min(4vw, 1rem);
+  }
+}
