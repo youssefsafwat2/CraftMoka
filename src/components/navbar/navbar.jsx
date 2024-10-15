@@ -1,23 +1,12 @@
-import style from "./navbar_style.module.css";
-
+import { React } from "react";
+import styles from "./navstyles.module.css";
 export default function Navbar() {
   return (
     <>
-      <div className={style.nav}>
-        <div className="logo">
-          <h1>CraftMoka</h1>
-        </div>
-        <div className={style.tabs}>
-          <ul>
-            <li>Eshop</li>
-            <li>customization</li>
-            <li>inspiration</li>
-            <li>About us</li>
-            <li>The shop</li>
-            <li>Blog</li>
-          </ul>
-        </div>
-      </div>
+      <div></div>
     </>
   );
 }
+
+// sliding text
+// Free shipping on all orders over €200 - Sign up for our newsletter and receive a 10% off on your first order

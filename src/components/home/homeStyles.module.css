@@ -1,0 +1,15 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-image: url(./landing_page_picture.jpg);
+  background-size: cover;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  background-position: 0px -298px;
+}
+.button {
+  background-color: transparent;
+  border: 0;
+}

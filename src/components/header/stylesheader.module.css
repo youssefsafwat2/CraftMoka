@@ -1,0 +1,142 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff9f2;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.header {
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "slider slider slider slider slider slider slider slider slider slider lan lan user user  cart  cart ";
+}
+
+.slider ul p {
+  text-wrap: nowrap;
+  margin: 0;
+}
+.slider ul {
+  list-style: none;
+  display: flex;
+  max-width: 100%;
+  flex-shrink: 0;
+  /* animation: RightToLeft 10s infinite linear alternate-reverse; */
+}
+
+.lan_and_curr {
+  grid-area: lan;
+}
+
+.user {
+  grid-area: user;
+  font-size: 21px;
+}
+.cart {
+  grid-area: cart;
+}
+.cart,
+.user,
+.lan_and_curr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-left: 1px solid #d9d9d9;
+  position: relative;
+}
+.lan:hover .language_menu {
+  display: flex;
+}
+.language_menu {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  top: 100%;
+  left: 0;
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  background-color: #fff9f2;
+}
+
+.currency:hover .curr_menu {
+  display: flex;
+}
+.curr_menu {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  justify-content: center;
+  border: 1px solid #d9d9d9;
+  display: none;
+  background-color: #fff9f2;
+}
+.currency:hover .curr_menu {
+  display: flex;
+}
+@keyframes RightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* /////////////////////////// */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0px 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+.tab {
+  margin: 15px;
+}
+
+.icons,
+.bars {
+  display: none;
+}
+@media only screen and (max-width: 1010px) {
+  .header {
+    display: none;
+  }
+  .navbar {
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    border-radius: 11px;
+    margin-top: 17px;
+    border: 0;
+  }
+  .tabs {
+    display: none;
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-right: 13px;
+  }
+  .bars {
+    display: block;
+    font-size: 20px;
+    margin-left: 13px;
+  }
+}

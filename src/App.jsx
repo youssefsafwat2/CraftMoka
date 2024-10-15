@@ -1,11 +1,15 @@
 import "./App.css";
-import Home from "./pages/home/home";
-import Layout from "./pages/layout/layout";
+import Header from "./components/Header/Header";
+import TextSlider from "./components/slidercard/slider";
+import Home from "./components/home/home";
+// Correct casing//+
+// import Carousel from "./components/product_slider/slider";
 function App() {
   return (
     <>
-      <Layout />
+      <Header />
       <Home />
+      {/* <TextSlider /> */}
     </>
   );
 }
