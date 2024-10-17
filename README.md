@@ -1,4 +1,4 @@
-# MERN Stack Project ( Jeweiry E-Commerce)
+# MERN Stack Project ( Jewelry E-Commerce)
 
 This is a full-stack web application built using **Node.js**, **Express.js**, and **React.js**. It follows the **MERN** stack architecture (MongoDB, Express, React, Node.js).
 
