@@ -1,0 +1,42 @@
+.product {
+  width: 25%;
+  /* margin: 5px; */
+  padding: 0;
+  z-index: 1;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.product-content {
+  background-size: cover;
+  background-position: center;
+  width: 304px;
+  height: 350px;
+  transition: background-image 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  /* align-items: start; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-name,
+.product-price {
+  display: block;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.product-price {
+  font-size: 0.9rem;
+}

@@ -1,0 +1,32 @@
+body {
+  background-color: #f9f4ef; /* نفس لون الخلفية */
+  font-family: "Arial", sans-serif; /* يمكنك تخصيص الخط */
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+h5 {
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.dropdown-toggle {
+  font-weight: normal;
+  color: black;
+}
+
+.dropdown-toggle::after {
+  margin-left: 10px;
+}
+
+.eshop-container {
+  padding: 20px;
+}
+
+p {
+  font-style: italic;
+  font-size: 18px;
+}

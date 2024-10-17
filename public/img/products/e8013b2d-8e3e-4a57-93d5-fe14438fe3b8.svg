@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+							<g id="arrow_circled" data-name="arrow_circled" transform="translate(-1445 -925)">
+								<g id="white_circle" data-name="white_circle" transform="translate(1445 925)" fill="none" stroke="#fff" stroke-width="1">
+									<circle cx="27" cy="27" r="27" stroke="none"></circle>
+									<circle cx="27" cy="27" r="26.5" fill="none"></circle>
+								</g>
+								<g id="arrow" data-name="arrow" transform="translate(149 76)">
+									<path id="Tracé_27" data-name="Tracé 27" d="M-6148.009,968h19.135" transform="translate(7460.754 -91)" fill="none" stroke="#fff" stroke-width="1"></path>
+									<path id="Tracé_28" data-name="Tracé 28" d="M-6139.575,962.726l5.455,5.455-5.455,5.455" transform="translate(7466 -91)" fill="none" stroke="#fff" stroke-width="1"></path>
+								</g>
+							</g>
+						</svg>

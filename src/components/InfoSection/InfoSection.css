@@ -1,0 +1,89 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*shop-section*/
+.shop-section {
+  background-color: #f9f4ef;
+  padding: 50px 50px;
+}
+
+.shop-title {
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.shop-description {
+  font-size: 30px;
+  color: #060606;
+}
+
+.shop-description strong {
+  font-weight: bold;
+}
+
+.img-fluid {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 768px) {
+  .shop-title {
+    font-size: 36px;
+  }
+
+  .shop-description {
+    font-size: 16px;
+  }
+}
+.section-divider {
+  border: none;
+  height: 1px;
+  background-color: #3a3938;
+  margin: 0;
+}
+/* InfoSection.css */
+.info-section {
+  background-color: #f9f4ef;
+}
+
+.info-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.info-section p {
+  font-size: 14px;
+  color: #030303;
+}
+
+.info-section i {
+  color: #000;
+}
+
+/* Add styles for the NavLink if needed */
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.info-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}

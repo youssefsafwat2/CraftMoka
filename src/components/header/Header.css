@@ -1,0 +1,8 @@
+header {
+  transition: background-color 0.3s ease-in-out;
+  margin: 0;
+  padding: 0;
+}
+.bg-indigo-600 {
+  background-color: #a03907 !important;
+}
