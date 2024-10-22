@@ -40,3 +40,10 @@ a {
 .product-price {
   font-size: 0.9rem;
 }
+
+.add-to-cart-icon{
+  width: 25px;
+  position: relative;
+  top: 90%;
+  right: -90%;
+}

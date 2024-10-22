@@ -1,5 +1,5 @@
-import Navbar from "../navbar/Navbar";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,10 +12,6 @@ function Header() {
         color: "#FFFFFF",
       }}
     >
-      <header className="relative z-50 bg-white-800 bg-opacity-70">
-        <Navbar />
-      </header>
-
       <div
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
@@ -41,12 +37,10 @@ function Header() {
             and celebrate special moments.
           </p>
           <div className="explore-btn mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
-              className=" rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
+             <Link to="/eshop" className=" rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          
               Explore Now <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

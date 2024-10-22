@@ -16,6 +16,7 @@ function ProductGrid() {
         );
 
         // Access the products array correctly
+        // console.log(response.data.data.data)
         setProducts(response.data.data.data); // Adjusted according to your API response
       } catch (err) {
         console.error("Error fetching products:", err);

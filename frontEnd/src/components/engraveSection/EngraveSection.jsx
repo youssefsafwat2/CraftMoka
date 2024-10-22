@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./EngraveSection.css";
+import { Link } from "react-router-dom";
 
 function EngraveSection() {
   const sectionRef = useRef(null);
@@ -36,21 +37,21 @@ function EngraveSection() {
             </p>
           </div>
 
-          <div className="engrave-link">
-            <svg
-              className="arrow-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 11.269 15.995"
-            >
-              <path
-                d="M11.269,8H16L8,0,0,8H4.726L8,11.269Z"
-                transform="translate(11.269) rotate(90)"
-              />
-            </svg>
-            <a href="https://arozjewelry.com/en/module/custom_page/engrave">
+          <Link to="/eshop">
+            <div className="engrave-link">
+              <svg
+                className="arrow-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 11.269 15.995"
+              >
+                <path
+                  d="M11.269,8H16L8,0,0,8H4.726L8,11.269Z"
+                  transform="translate(11.269) rotate(90)"
+                />
+              </svg>
               Personalize my jewelry
-            </a>
-          </div>
+            </div>
+          </Link>
         </div>
 
         <div className="engrave-images">

@@ -1,39 +1,37 @@
+import { useParams, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/slices/cartSlice";
 import { useState } from "react";
-import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
 
 const ProductDetails = () => {
-  // State for handling the displayed image
-  const [image, setImage] = useState(0); // Updated to start at index 0 for images
-  const product = {
-    name: "Elegant Necklace",
-    price: 50,
-    discount: 15,
-    description: "An elegant necklace with a modern design.",
-    images: [
-      "/images/necklace-1.jpg",
-      "/images/necklace-2.jpg",
-      "/images/necklace-3.jpg",
-      "/images/necklace-4.jpg",
-    ],
+  const { id } = useParams(); // Get product ID from URL params
+  const location = useLocation();
+  const { product } = location.state || {}; // Retrieve product from state if available
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1); // State to manage quantity selection
+  const [image, setImage] = useState(0); // State to manage the image gallery
+
+  // If the product data is not passed via state (fallback message)
+  if (!product) {
+    return <div>Product not found. Please try again.</div>;
+  }
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity }));
   };
+
   return (
     <>
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 my-12">
-        {" "}
-        {/* Added my-12 for top and bottom margin */}
         <div className="flex flex-col md:flex-row -mx-4">
           {/* Product Images */}
           <div className="md:flex-1 px-4 md:mr-8">
-            {" "}
-            {/* Added mr-8 to add space between images and details */}
             <div>
               <div className="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
                 {/* Display selected image */}
-                {product.images && (
+                {product.image && (
                   <img
-                    src={product.images[image]}
+                    src={product.image}
                     alt={product.name}
                     className="object-cover h-full w-full rounded-lg"
                   />
@@ -100,7 +98,11 @@ const ProductDetails = () => {
                 <div className="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
                   Qty
                 </div>
-                <select className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
+                <select
+                  value={quantity}
+                  onChange={(e) => setQuantity(Number(e.target.value))}
+                  className="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1"
+                >
                   {[1, 2, 3, 4, 5].map((qty) => (
                     <option key={qty} value={qty}>
                       {qty}
@@ -124,6 +126,7 @@ const ProductDetails = () => {
               </div>
 
               <button
+                onClick={handleAddToCart}
                 type="button"
                 className="h-14 px-6 py-2 font-semibold rounded-xl bg-[#A03907] hover:bg-[#8A2F06] text-white"
               >
@@ -133,7 +136,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

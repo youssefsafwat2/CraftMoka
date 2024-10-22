@@ -1,0 +1,71 @@
+.orders-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+}
+
+.orders-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.order-card {
+  padding: 1rem;
+  border: 1px solid #e5e7eb; /* Gray 300 */
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* White */
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 30rem; /* Limit width for better presentation */
+}
+
+.order-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937; /* Gray 800 */
+}
+
+.order-total,
+.order-status {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  color: #4b5563; /* Gray 600 */
+}
+
+.product-list {
+  margin-top: 0.5rem;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1.5rem;
+}
+
+.product-item {
+  color: #6b7280; /* Gray 500 */
+}
+
+.error-message {
+  text-align: center;
+  color: #ef4444; /* Red 500 */
+}
+
+.loading-message {
+  text-align: center;
+  color: #1f2937; /* Gray 900 */
+}
+.product-item {
+  color: #6b7280; /* Gray 500 */
+  display: flex;
+  align-items: center;
+}
+
+.product-item img {
+  width: 3rem; /* Adjust size as needed */
+  height: 3rem; /* Adjust size as needed */
+  border-radius: 0.25rem; /* Rounded corners */
+  object-fit: cover; /* Ensure the image covers the area */
+  margin-right: 0.5rem; /* Space between image and text */
+}

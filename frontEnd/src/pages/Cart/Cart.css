@@ -1,0 +1,37 @@
+.cart-items {
+  max-height: 60vh; /* Set a max height to control scrolling */
+  overflow-y: auto; /* Enable vertical scrolling if items exceed the height */
+  padding-right: 1rem; /* Add padding to prevent content from touching the scrollbar */
+}
+
+.cart-items::-webkit-scrollbar {
+  width: 10px; /* Customize the scrollbar width */
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background-color: #a03907; /* Customize the color of the scrollbar */
+  border-radius: 5px;
+}
+
+/* Cart.css */
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.max-h-96 {
+  max-height: 24rem; /* Adjust this value to fit your design */
+}
+
+/* Custom scrollbar styles */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #a03907; /* Scrollbar color */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Background color of the scrollbar track */
+}

@@ -12,8 +12,9 @@ router
   .route("/")
   .get(cartController.getCart)
   .post(cartController.addToCart)
-  .patch(cartController.updateCartItemQuantity);
+  .patch(cartController.updateCartItemQuantity)
+  .delete(cartController.clearCart);
 
-router.route("/remove").post(cartController.removeFromCart); // Remove an item from the cart
+router.route("/remove").post(cartController.removeFromCart);
 
 module.exports = router;

@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "tailwindcss/tailwind.css";
 import "./Footer.css";
+import { useSelector, useDispatch } from "react-redux"; // Import hooks
+import { logout } from "../../redux/authSlice"; // Import logout action
+
 const Footer = () => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn); // Access isLoggedIn from Redux
+  const dispatch = useDispatch(); // To dispatch actions
+
   return (
-    <footer className="relative bg-blueGray-200 pt-8 pb-6">
+    <footer className="bg-[#a47d6929] w-full pt-8 pb-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap text-left lg:text-left">
           <div className="w-full lg:w-6/12 px-4">
@@ -13,34 +20,7 @@ const Footer = () => {
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
               Find us on any of these platforms.
             </h5>
-            <div className="mt-6 lg:mb-0 mb-6 flex space-x-2">
-              {" "}
-              {/* Added flex and spacing classes */}
-              <a
-                className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none"
-                href="https://www.facebook.com" // Replace with actual link
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-facebook-square"></i>
-              </a>
-              <a
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none"
-                href="https://www.instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none"
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-x"></i>
-              </a>
-            </div>
+            <div className="mt-6 lg:mb-0 mb-6 flex space-x-2"></div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
             <div className="flex flex-wrap items-top mb-6">
@@ -50,21 +30,51 @@ const Footer = () => {
                 </span>
                 <ul className="list-unstyled">
                   <li>
-                    <a
+                    <Link
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="#"
+                      to="/about"
                     >
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                      href="#"
+                      to="/eshop"
                     >
-                      Blog
-                    </a>
+                      Eshop
+                    </Link>
                   </li>
+                  {!isLoggedIn && (
+                    <>
+                      <li>
+                        <Link
+                          className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          to="/signin"
+                        >
+                          Sign In
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          to="/signup"
+                        >
+                          Sign Up
+                        </Link>
+                      </li>
+                    </>
+                  )}
+                  {isLoggedIn && (
+                    <li>
+                      <button
+                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        onClick={() => dispatch(logout())}
+                      >
+                        Logout
+                      </button>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

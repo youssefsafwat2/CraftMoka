@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./HomeFocus.css";
+import { Link } from "react-router-dom";
 
 function HomeFocus() {
   useEffect(() => {
@@ -40,9 +41,10 @@ function HomeFocus() {
         ></div>
         <div className="content">
           <h3 className="title">LAST CALL</h3>
-          <span>Discover</span>
+          <Link to="/eshop" className="link">
+            <span>Discover</span>
+          </Link>
         </div>
-        <a href="https://arozjewelry.com/en/64-last-call" className="link"></a>
       </div>
 
       <div className="focus-item">
@@ -54,9 +56,10 @@ function HomeFocus() {
         ></div>
         <div className="content">
           <h3 className="title">New in</h3>
-          <span>Discover</span>
+          <Link to="/eshop" className="link">
+            <span>Discover</span>
+          </Link>
         </div>
-        <a href="https://arozjewelry.com/en/62-new-in" className="link"></a>
       </div>
     </section>
   );

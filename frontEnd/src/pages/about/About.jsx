@@ -1,10 +1,6 @@
-import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-
 const About = () => {
   return (
     <>
-      <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#A03907]">About CraftMoka</h1>
@@ -67,7 +63,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

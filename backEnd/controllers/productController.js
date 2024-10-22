@@ -73,6 +73,5 @@ exports.deleteProduct = factory.deleteOne(Product);
 exports.topProducts = (req, res, next) => {
   req.query.limit = "4";
   req.query.sort = "price";
-  req.query.fields = "name,price";
   next();
 };

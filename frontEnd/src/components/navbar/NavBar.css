@@ -4,11 +4,12 @@
   box-sizing: border-box;
 }
 nav {
-  position: relative; /* Ensure it's not fixed */
-  top: 0; /* Align it to the top */
+  position: relative;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 50; /* Ensure it's above other content */
+  z-index: 50;
+  margin: 0 auto !important;
 }
 
 .header {

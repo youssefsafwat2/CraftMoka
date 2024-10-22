@@ -7,11 +7,15 @@ const router = express.Router();
 router
   .route("/")
   .get(productController.getAllProducts)
+
   .post(
     authMiddleware.protect,
     authMiddleware.restrictTo("admin"),
     productController.createProduct
   );
+router
+  .route("/top-products")
+  .get(productController.topProducts, productController.getAllProducts);
 
 router
   .route("/:id")

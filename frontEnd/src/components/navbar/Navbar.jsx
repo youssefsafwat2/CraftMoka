@@ -1,13 +1,33 @@
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/slices/authSlice";
 import "./Navbar.css";
+import { clearCart } from "../../redux/slices/cartSlice";
 
 function Navbar() {
-  const cartItemCount = 3; // Example count of items in the cart
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); // Hook for navigation
+
+  // Get the login state and cart item count from Redux
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const cartItems = useSelector((state) => state.cart.items) || []; // Ensure it's an array
+  const cartItemCount = cartItems.length; // Safe to access length
+
+  // Optional: Check login state when the component mounts
+  useEffect(() => {
+    // You might want to check the login state with a thunk if needed
+  }, [dispatch]);
+
+  const handleLogout = () => {
+    dispatch(clearCart());
+    dispatch(logout());
+    navigate("/"); // Redirect to homepage or another page after logging out
+  };
 
   return (
     <nav
-      className={
-        "flex justify-between items-center p-4 transition-all duration-300 bg-transparent"
-      }
+      className="flex justify-between items-center p-4 transition-all duration-300 bg-transparent"
       style={{
         width: "100%",
         margin: 0,
@@ -16,28 +36,46 @@ function Navbar() {
       }}
     >
       <div className="flex items-center">
-        <img
-          className="h-8 w-auto"
-          src="public/img/craft-moka-logo.png"
-          alt="Your Company"
-        />
+        <Link to="/">
+          <img
+            className="h-8 w-auto"
+            src="/img/craft-moka-logo.png" // Fixed image path
+            alt="Your Company"
+          />
+        </Link>
         <div className="ml-6 flex space-x-4">
-          <a href="#" className="text-black hover:text-gray-700">
+          <Link to="/eshop" className="text-black hover:text-gray-700">
             Eshop
-          </a>
-          <a href="#" className="text-black hover:text-gray-700">
+          </Link>
+          <Link to="/about" className="text-black hover:text-gray-700">
             About
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex items-center space-x-4">
-        <a href="#" className="text-black hover:text-gray-700">
-          Sign In
-        </a>
-        <a href="#" className="text-black hover:text-gray-700">
-          Sign Up
-        </a>
-        <button className="relative bg-transparent">
+        {isLoggedIn ? (
+          <>
+            <Link to="/orders" className="text-black hover:text-gray-700">
+              My Orders
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="text-black hover:text-gray-700"
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/signin" className="text-black hover:text-gray-700">
+              Sign In
+            </Link>
+            <Link to="/signup" className="text-black hover:text-gray-700">
+              Sign Up
+            </Link>
+          </>
+        )}
+        <Link to="/cart" className="relative bg-transparent">
           <span className="sr-only">View cart</span>
           <svg
             className="h-6 w-6 text-black"
@@ -58,7 +96,7 @@ function Navbar() {
               {cartItemCount}
             </span>
           )}
-        </button>
+        </Link>
       </div>
     </nav>
   );
