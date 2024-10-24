@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, fetchCartItems } from "../../redux/slices/cartSlice";
-import "./product.css";
+import "./Product.css";
 import { Link } from "react-router-dom";
 
 function Product({ product }) {
