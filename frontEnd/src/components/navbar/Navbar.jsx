@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/slices/authSlice";
-import "./Navbar.css";
 import { clearCart } from "../../redux/slices/cartSlice";
 
 function Navbar() {
