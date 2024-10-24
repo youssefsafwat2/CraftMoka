@@ -37,7 +37,7 @@ export default function SignIn() {
         <img
           style={{ maxWidth: "105px", height: "auto" }}
           alt="CraftMoka"
-          src="public/img/craft-moka-logo.png"
+          src="/img/craft-moka-logo.png"
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

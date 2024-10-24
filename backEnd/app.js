@@ -50,7 +50,11 @@ app.use(
 
 app.use(compression());
 app.use(cors());
-
+app.use(
+  cors({
+    origin: "https://craft-moka-4wzy.vercel.app",
+  })
+);
 // Routes
 
 app.use("/api/v1/products", productRouter);
