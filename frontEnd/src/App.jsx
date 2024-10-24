@@ -21,7 +21,7 @@ import Checkout from "./pages/Checkout/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation/OrderConfirmation";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import MyOrders from "./pages/MyOrders/MyOrders";
-import "./app.css";
+
 import { useDispatch } from "react-redux";
 import { fetchCartItems } from "./redux/slices/cartSlice";
 
