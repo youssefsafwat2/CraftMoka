@@ -12,7 +12,7 @@ function ProductGrid() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:3000/api/v1/products/"
+          `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/v1/products/`
         );
 
         // Access the products array correctly

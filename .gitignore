@@ -1,1 +1,45 @@
-node_modules
+# Node.js
+node_modules/
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Backend
+backEnd/node_modules/
+backEnd/.env
+backEnd/dist/
+backEnd/build/
+
+# Frontend
+frontEnd/node_modules/
+frontEnd/dist/
+frontEnd/build/
+frontEnd/.env
+frontEnd/.vite/
+
+# Testing
+coverage/
+*.lcov
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Editor Directories and Files
+.idea/
+.vscode/
+*.swp
+
+# Cache
+.cache/
+.pnpm-debug.log
+.vite/deps/
+.vite/*lockfile
+yarn.lock
+
+# Production files
+public/static/

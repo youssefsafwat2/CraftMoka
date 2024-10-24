@@ -2,7 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:3000/api/v1/orders/";
+const API_URL = `${
+  import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+}/api/v1/orders/`;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");

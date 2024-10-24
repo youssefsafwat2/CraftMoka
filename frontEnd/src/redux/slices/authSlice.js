@@ -4,7 +4,7 @@ import axios from "axios";
 // Async thunk for signing up a user
 export const signup = createAsyncThunk("auth/signup", async (userData) => {
   const response = await axios.post(
-    "http://127.0.0.1:3000/api/v1/users/signup",
+    `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/v1/users/signup`,
     userData
   );
 
@@ -20,7 +20,7 @@ export const signin = createAsyncThunk(
   async (credentials, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:3000/api/v1/users/login",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/v1/users/login`,
         credentials
       );
 
@@ -44,7 +44,9 @@ export const forgotPassword = createAsyncThunk(
   async (email, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://127.0.0.1:3000/api/v1/users/forgotPassword",
+        `${
+          import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+        }/api/v1/users/forgotPassword`,
         { email }
       );
       return response.data.message; // Success message from the API
@@ -66,7 +68,9 @@ export const resetPassword = createAsyncThunk(
   async ({ token, password, passwordConfirm }, { rejectWithValue }) => {
     try {
       const response = await axios.patch(
-        `http://127.0.0.1:3000/api/v1/users/resetPassword/${token}`,
+        `${
+          import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+        }/api/v1/users/resetPassword/${token}`,
         { password, passwordConfirm }
       );
 

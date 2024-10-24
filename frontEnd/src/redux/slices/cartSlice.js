@@ -1,7 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:3000/api/v1/cart/";
+const API_URL = `${
+  import.meta.env.VITE_REACT_APP_BACKEND_BASEURL
+}/api/v1/cart/`;
 
 // Helper function to get the token and set headers
 const getAuthHeaders = () => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { placeOrder } from "../../redux/slices/orderSlice";
+import { fetchOrders, placeOrder } from "../../redux/slices/orderSlice";
 
 export default function Checkout() {
   const [shippingInfo, setShippingInfo] = useState({
@@ -30,6 +30,7 @@ export default function Checkout() {
     const result = await dispatch(
       placeOrder({ shippingInfo, cartItems, token })
     );
+    await dispatch(fetchOrders());
 
     if (placeOrder.fulfilled.match(result)) {
       navigate("/order-confirmation");

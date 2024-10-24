@@ -35,27 +35,36 @@ const MyOrders = () => {
       <h1 className="orders-title">Your Orders</h1>
       <div className="order-list">
         <ul className="space-y-4">
-          {orders.map((order) => (
-            <li key={order._id} className="order-card">
-              <h2 className="order-title">Order #{order._id}</h2>
-              <p className="order-total">Total: ${order.totalPrice}</p>
-              <p className="order-status">Status: {order.orderStatus}</p>
-              <h3 className="font-medium text-gray-700">Products:</h3>
-              <ul className="product-list">
-                {order.products.map((item, i) => (
-                  <li
-                    key={item.product._id + i}
-                    className="product-item flex items-center mt-2"
-                  >
-                    <span className="text-gray-600">{item.product.name}</span>
-                    <span className="ml-2 text-gray-500">
-                      Quantity: {item.quantity}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          {orders
+            .slice()
+            .reverse()
+            .map(
+              (
+                order // Reverse the orders here
+              ) => (
+                <li key={order._id} className="order-card">
+                  <h2 className="order-title">Order #{order._id}</h2>
+                  <p className="order-total">Total: ${order.totalPrice}</p>
+                  <p className="order-status">Status: {order.orderStatus}</p>
+                  <h3 className="font-medium text-gray-700">Products:</h3>
+                  <ul className="product-list">
+                    {order.products.map((item, i) => (
+                      <li
+                        key={item.product._id + i}
+                        className="product-item flex items-center mt-2"
+                      >
+                        <span className="text-gray-600">
+                          {item.product.name}
+                        </span>
+                        <span className="ml-2 text-gray-500">
+                          Quantity: {item.quantity}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )
+            )}
         </ul>
       </div>
     </div>

@@ -56,7 +56,7 @@ module.exports = class Email {
       <div style="font-family: Arial, sans-serif; text-align: center;">
         <h1>Welcome, ${this.firstName}!</h1>
         <p>Thank you for joining the CraftMoka family. We're excited to have you with us!</p>
-        <a href="${this.url}" style="color: #fff; background-color: #007bff; padding: 10px 20px; text-decoration: none;">Visit CraftMoka</a>
+        <a href="${this.url}" style="color: #fff; background-color: #A03907; padding: 10px 20px; text-decoration: none;">Visit CraftMoka</a>
       </div>
     `;
     await this.send("Welcome to the CraftMoka Family!", html);
@@ -68,7 +68,7 @@ module.exports = class Email {
         <h1>Password Reset</h1>
         <p>Hello ${this.firstName},</p>
         <p>You requested to reset your password. Click the link below to reset it:</p>
-        <a href="${this.url}" style="color: #fff; background-color: #007bff; padding: 10px 20px; text-decoration: none;">Reset Password</a>
+        <a href="${this.url}" style="color: #fff; background-color: #A03907; padding: 10px 20px; text-decoration: none;">Reset Password</a>
         <p>This link will expire in 10 minutes.</p>
       </div>
     `;
